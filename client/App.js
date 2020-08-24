@@ -18,7 +18,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Main from './src/pages/Main';
 import Feed from './src/pages/Feed';
 import QnAapp from './src/pages/QnAapp';
-import WebView from './src/pages/WebView';
+import WebViewer from './src/pages/WebViewer';
 
 // route.params?.post
 
@@ -37,8 +37,8 @@ function MainStackScreen() {
         options={{title: '무언가 찾고 계세요?'}}
       />
       <MainStack.Screen
-        name="WebView"
-        component={WebView}
+        name="WebViewer"
+        component={WebViewer}
         options={{title: '자세히 보기'}}
       />
     </MainStack.Navigator>
@@ -62,7 +62,13 @@ const Tab = createBottomTabNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: '#e91e63',
+          labelStyle: {
+            fontSize: 20,
+          },
+        }}>
         <Tab.Screen
           name="Home"
           component={MainStackScreen}
