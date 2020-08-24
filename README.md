@@ -2,4 +2,6 @@
 실버 세대를 위한 정보 제공 플랫폼 입니다
 
 ver1
-![ezgif-6-58203406c3d1](https://user-images.githubusercontent.com/61297852/91048589-d8607f00-e656-11ea-8a52-c3b8fb369aca.gif)
+<details>
+<summary> Gif </summary>
+![ezgif-6-5f282f20accd](https://user-images.githubusercontent.com/61297852/91048860-3ee59d00-e657-11ea-9ffc-86e7718560d1.gif)
