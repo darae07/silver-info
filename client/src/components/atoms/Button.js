@@ -1,56 +1,68 @@
 import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+// long, short, orange(defalt), white
 
 function Button({title, onPress, type, height}) {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <LinearGradient
-        colors={height ? ['#FFBF00', '#FF8000'] : ['#FFFFFF', '#FAFAFA']}
+    <TouchableOpacity
+      style={
+        !type
+          ? defaltButton.button
+          : type === 'light'
+          ? lightButton.button
+          : defaltButton.button
+      }
+      onPress={onPress}>
+      <Text
         style={
           !type
-            ? styles.button
-            : type === 'long'
-            ? styles.longButton
-            : styles.button
+            ? defaltButton.text
+            : type === 'light'
+            ? lightButton.text
+            : defaltButton.text
         }>
-        <Text style={height ? styles.text : styles.textNomal}>{title}</Text>
-      </LinearGradient>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 }
 export default Button;
 
-const styles = StyleSheet.create({
+const baseButton = {
+  width: 320,
+  elevation: 8,
+  paddingVertical: 22,
+  paddingHorizontal: 19,
+  margin: 3,
+  alignItems: 'center',
+};
+const lightButton = StyleSheet.create({
   button: {
-    width: '100%',
-    elevation: 8,
+    ...baseButton,
+    backgroundColor: '#FFFFFF',
+    width: 160,
+    paddingVertical: 16,
     borderRadius: 10,
-    paddingVertical: 17,
-    paddingHorizontal: 19,
-    margin: 3,
-  },
-  longButton: {
-    width: '70%',
-    elevation: 8,
-    borderRadius: 10,
-    paddingVertical: 17,
-    paddingHorizontal: 19,
-    margin: 3,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
   },
   text: {
     fontSize: 20,
-    color: '#fff',
-    fontWeight: 'bold',
-    alignSelf: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: {width: -0.5, height: 0.5},
-    textShadowRadius: 5,
-  },
-  textNomal: {
-    fontSize: 20,
     color: '#000000',
     fontWeight: 'bold',
-    alignSelf: 'center',
+  },
+});
+const defaltButton = StyleSheet.create({
+  button: {
+    ...baseButton,
+    backgroundColor: '#F27200',
+  },
+  text: {
+    fontSize: 23,
+    color: '#FFFFFF',
+    fontWeight: 'bold',
   },
 });
