@@ -6,6 +6,10 @@
   <img width="250" alt="스크린샷 2020-08-24 오후 9 44 57" src="https://user-images.githubusercontent.com/61297852/91048860-3ee59d00-e657-11ea-9ffc-86e7718560d1.gif">
  
   </details>
+ <details>
+<summary> Ver1 Gif </summary>
+  <img width="250" alt="스크린샷 2020-08-24 오후 9 44 57" src="https://user-images.githubusercontent.com/61297852/91196668-6874f600-e735-11ea-8d0b-aacb0b4dcd5d.gif">
+ </details>
  
 ### 와이어프레임
 
