@@ -19,6 +19,8 @@ import Main from './src/pages/Main';
 import Feed from './src/pages/Feed';
 import QnAapp from './src/pages/QnAapp';
 import WebViewer from './src/pages/WebViewer';
+import Intro from './src/pages/Intro';
+import MainPreview from './src/pages/MainPreview';
 
 // route.params?.post
 
@@ -30,11 +32,6 @@ function MainStackScreen() {
         name="Home"
         component={Main}
         options={{title: '살펴보기'}}
-      />
-      <MainStack.Screen
-        name="QnA"
-        component={QnAapp}
-        options={{title: '무언가 찾고 계세요?'}}
       />
       <MainStack.Screen
         name="WebViewer"
@@ -58,28 +55,67 @@ function FeedStackScreen() {
 }
 
 const Tab = createBottomTabNavigator();
+function TabNav() {
+  return (
+    <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: '#e91e63',
+        labelStyle: {
+          fontSize: 20,
+        },
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={MainStackScreen}
+        options={{title: '살펴보기'}}
+      />
+      <Tab.Screen
+        name="Feed"
+        component={FeedStackScreen}
+        options={{title: '저장'}}
+      />
+      <Tab.Screen
+        name="QnA"
+        component={QnAapp}
+        options={{title: '앱 검색기'}}
+      />
+    </Tab.Navigator>
+  );
+}
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        tabBarOptions={{
-          activeTintColor: '#e91e63',
-          labelStyle: {
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#F27200',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
             fontSize: 20,
+            paddingBottom: 10,
           },
         }}>
-        <Tab.Screen
+        <Stack.Screen
           name="Home"
-          component={MainStackScreen}
+          component={Intro}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="MainPreview"
+          component={MainPreview}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="TabNav"
+          component={TabNav}
           options={{title: '살펴보기'}}
         />
-        <Tab.Screen
-          name="Feed"
-          component={FeedStackScreen}
-          options={{title: '저장'}}
-        />
-      </Tab.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

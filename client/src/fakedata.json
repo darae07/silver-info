@@ -1,0 +1,25 @@
+{
+  "main": [
+    {
+      "preview": {
+        "uri": "https://www.thedailypost.kr/news/photo/202007/75004_67347_2251.jpg",
+        "title": "코레일앱의 사용방법을 알려드려요"
+      },
+      "web": "https://www.korailtalk.co.kr/35"
+    },
+    {
+      "preview": {
+        "uri": "https://cdn.jootc.com/wp-content/uploads/2018/12/kakaotalk-logo-card-2018.png",
+        "title": "카카오톡의 사용방법을 알려드려요"
+      },
+      "web": "http://www.100ssd.co.kr/news/articleView.html?idxno=40958"
+    },
+    {
+      "preview": {
+        "uri": "https://dimg.donga.com/wps/NEWS/IMAGE/2019/04/17/95100791.1.jpg",
+        "title": "유튜브의 사용방법을 알려드려요"
+      },
+      "web": "http://it.chosun.com/site/data/html_dir/2018/05/30/2018053085019.html"
+    }
+  ]
+}
