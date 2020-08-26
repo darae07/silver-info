@@ -27,7 +27,18 @@ import MainPreview from './src/pages/MainPreview';
 const MainStack = createStackNavigator();
 function MainStackScreen() {
   return (
-    <MainStack.Navigator>
+    <MainStack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#F27200',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 20,
+          paddingBottom: 10,
+        },
+      }}>
       <MainStack.Screen
         name="Home"
         component={Main}
@@ -44,7 +55,18 @@ function MainStackScreen() {
 const FeedStack = createStackNavigator();
 function FeedStackScreen() {
   return (
-    <FeedStack.Navigator>
+    <FeedStack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#F27200',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 20,
+          paddingBottom: 10,
+        },
+      }}>
       <FeedStack.Screen
         name="Feed"
         component={Feed}
@@ -88,18 +110,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#F27200',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            fontSize: 20,
-            paddingBottom: 10,
-          },
-        }}>
+      <Stack.Navigator>
         <Stack.Screen
           name="Home"
           component={Intro}
@@ -113,7 +124,7 @@ const App = () => {
         <Stack.Screen
           name="TabNav"
           component={TabNav}
-          options={{title: '살펴보기'}}
+          options={{title: '살펴보기', headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
