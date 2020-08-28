@@ -17,5 +17,5 @@ module.exports = (sequelize, DataTypes) => {
             modelName: 'AppList',
         }
     );
-    return Sentence;
+    return AppList;
 };

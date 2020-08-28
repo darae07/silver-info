@@ -18,5 +18,5 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'InfoData',
     }
   );
-  return Sentence;
+  return InfoData;
 };

@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/users');
+const dataRouter = require('./routes/data');
 const cors = require('cors');
 
 const app = express();
@@ -34,6 +35,7 @@ app.get(root, (req, res) => {
 });
 
 app.use('/users', userRouter);
+app.use('/data', dataRouter);
 
 app.set('port', port);
 app.listen(app.get('port'), () => {
