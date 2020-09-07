@@ -6,6 +6,7 @@ const crypto = require('crypto');
 
 module.exports = {
     post: (req, res) => {
-
+        res.set('Authorization', req.session.query.code);
+        res.redirect('https://kapi.kakao.com/v1/user/logout');
     }
 };

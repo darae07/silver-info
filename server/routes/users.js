@@ -4,8 +4,8 @@ const router = express.Router();
 const { userController } = require('../controller');
 
 
-// * POST /user/signin
-router.post('/signin', userController.signin.post);
+// * GET /user/signin
+router.get('/signin', userController.signin.get);
 
 // * POST /user/signout
 router.post('/signout', userController.signout.post);
